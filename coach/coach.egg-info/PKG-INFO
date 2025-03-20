@@ -1,0 +1,18 @@
+Metadata-Version: 2.2
+Name: coach
+Version: 1.0.0
+Summary: A comprehensive code security & quality analysis tool
+Home-page: https://github.com/Rukundo-Bahati/coach
+Author: Bahati
+Requires-Dist: gitpython
+Requires-Dist: colorama
+Requires-Dist: tabulate
+Requires-Dist: tqdm
+Requires-Dist: requests
+Requires-Dist: semgrep
+Requires-Dist: pyfiglet
+Requires-Dist: configparser
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary

@@ -1,0 +1,11 @@
+README.md
+setup.py
+coach/__init__.py
+coach/__main__.py
+coach/react-security.yaml
+coach.egg-info/PKG-INFO
+coach.egg-info/SOURCES.txt
+coach.egg-info/dependency_links.txt
+coach.egg-info/entry_points.txt
+coach.egg-info/requires.txt
+coach.egg-info/top_level.txt

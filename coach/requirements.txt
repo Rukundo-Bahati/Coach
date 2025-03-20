@@ -1,0 +1,8 @@
+gitpython
+colorama
+tabulate
+tqdm
+requests
+semgrep
+pyfiglet
+configparser

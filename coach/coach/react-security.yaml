@@ -1,0 +1,178 @@
+rules:
+  # XSS: Detect usage of dangerouslySetInnerHTML
+  - id: react-dangerously-set-inner-html
+    patterns:
+      - pattern: dangerouslySetInnerHTML
+    message: >
+      Usage of dangerouslySetInnerHTML can lead to XSS vulnerabilities. Ensure the content is sanitized.
+    severity: ERROR
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: react
+
+  # XSS: Detect direct use of innerHTML
+  - id: react-innerhtml-usage
+    patterns:
+      - pattern: element.innerHTML = $CONTENT
+    message: >
+      Setting innerHTML directly can lead to XSS. Consider using DOMPurify or a similar sanitization library.
+    severity: ERROR
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: javascript
+
+  # SQL Injection: Detect unsafe concatenation in SQL queries
+  - id: sql-injection-string-concat
+    patterns:
+      - pattern: |
+          db.query("SELECT * FROM users WHERE id = " + req.params.id);
+    message: >
+      Possible SQL Injection: Use parameterized queries or prepared statements instead of string concatenation.
+    severity: ERROR
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: node.js
+
+  # SQL Injection: Detect unsafe use of string literals in queries
+  - id: sql-injection-string-literal
+    patterns:
+      - pattern: |
+          connection.execute("INSERT INTO users (username, password) VALUES ('" + $USER + "', '" + $PASS + "')");
+    message: >
+      Possible SQL Injection: Use parameterized queries with ? or placeholders instead of string literals.
+    severity: ERROR
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: node.js
+
+  # Insecure Dependencies: Detect usage of vulnerable dependencies (Example: outdated Lodash)
+  - id: insecure-dependency-lodash
+    patterns:
+      - pattern: import lodash from "lodash";
+      - pattern: const lodash = require("lodash");
+    message: >
+      Lodash versions below 4.17.21 have security vulnerabilities. Ensure you use an updated version.
+    severity: WARNING
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: javascript
+
+  # Insecure Dependencies: Detect usage of outdated Express versions
+  - id: insecure-dependency-express
+    patterns:
+      - pattern: import express from "express";
+      - pattern: const express = require("express");
+    message: >
+      Older versions of Express may have security vulnerabilities. Ensure you are using the latest stable version.
+    severity: WARNING
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: node.js
+
+  # Hardcoded Secrets: Detect API keys or credentials in code
+  - id: hardcoded-api-key
+    patterns:
+      - pattern: 'apiKey = "sk_live_..."'
+      - pattern: 'const API_KEY = "AIza..."'
+      - pattern: 'const SECRET_KEY = "...";'
+    message: >
+      Hardcoded API keys detected. Store credentials securely using environment variables.
+    severity: ERROR
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: javascript
+
+  # Hardcoded Credentials: Detect usage of plaintext passwords
+  - id: hardcoded-password
+    patterns:
+      - pattern: 'const password = "mypassword";'
+      - pattern: 'let PASSWORD = "admin123";'
+    message: >
+      Hardcoded passwords found. Use environment variables or secure storage mechanisms.
+    severity: ERROR
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: javascript
+
+  # Insecure CORS Configuration
+  - id: insecure-cors-configuration
+    patterns:
+      - pattern: |
+          app.use(cors({ origin: '*' }));
+    message: >
+      Wildcard CORS ('*') allows all origins and may expose sensitive data. Restrict CORS to specific origins.
+    severity: WARNING
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: node.js
+
+  # Insecure Usage of eval()
+  - id: insecure-eval
+    patterns:
+      - pattern: eval(...)
+    message: >
+      Usage of eval() can lead to code injection vulnerabilities. Avoid using eval() in your React applications.
+    severity: ERROR
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: javascript
+
+  # Insecure Fetch Requests (Missing No-CORS Policy)
+  - id: insecure-fetch-missing-cors
+    patterns:
+      - pattern: fetch($URL);
+    message: >
+      Fetch request without 'mode' set to 'cors' may lead to security issues. Ensure proper CORS handling.
+    severity: WARNING
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: javascript
+
+  # Detect Missing Helmet Middleware in Express (Protection against common web vulnerabilities)
+  - id: missing-helmet-middleware
+    patterns:
+      - pattern: const express = require("express");
+      - pattern-not-inside: app.use(helmet());
+    message: >
+      The Helmet middleware is missing in your Express app. Helmet helps secure your app by setting HTTP headers.
+    severity: WARNING
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: node.js
+
+  # Detect Missing Rate Limiting in Express
+  - id: missing-rate-limit-middleware
+    patterns:
+      - pattern: const express = require("express");
+      - pattern-not-inside: app.use(rateLimit(...));
+    message: >
+      Missing rate-limiting middleware in your Express app. This can lead to brute-force attacks or DDoS attacks.
+    severity: WARNING
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: node.js
+
+  # Detect Exposed /admin Routes in Express
+  - id: exposed-admin-route
+    patterns:
+      - pattern: app.use("/admin", ...);
+    message: >
+      Exposed admin route detected. Ensure authentication and access controls are in place.
+    severity: WARNING
+    languages: [javascript, typescript]
+    metadata:
+      category: security
+      technology: node.js

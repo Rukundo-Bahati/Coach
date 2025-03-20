@@ -1,0 +1,2 @@
+[console_scripts]
+coach = coach.__main__:main
