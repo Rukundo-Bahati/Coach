@@ -37,12 +37,12 @@ Coach is an advanced, multi-language static analysis tool designed to identify s
 Clone the repository:
 ```bash
 git clone https://github.com/Rukundo-Bahati/Coach.git
-cd Coach
+cd Coach/coach
 ```
 
 Install Python dependencies:
 ```bash
-pip3 install -r requirements.txt
+pip3 install .
 ```
 (*Note: Ensure `requirements.txt` includes rich, pyfiglet, gitpython, requests, etc.*)
 
@@ -59,7 +59,7 @@ Coach will check for missing dependencies and provide installation commands. Set
 ### **Basic Command**
 Analyze a repository by providing its URL and branch:
 ```bash
-python3 coach.py https://github.com/username/repo.git main
+coach.py https://github.com/username/repo.git main
 ```
 
 ### **Example Output**
