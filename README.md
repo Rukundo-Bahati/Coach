@@ -136,6 +136,9 @@ Coach uses a JSON configuration file located at `~/.coach/config.json`. Customiz
 
 ---
 
+## Logs
+Check logs at `~/.coach/coach.log`
+
 ## 🛡 Supported Tools
 
 | Language  | Security Tools         | Quality Tools                | Dependency Tools          |
