@@ -40,6 +40,12 @@ git clone https://github.com/Rukundo-Bahati/Coach.git
 cd Coach/coach
 ```
 
+Create a virtual environment:
+```bash
+python3 -m venv venv_new
+source venv_new/bin/activate
+```
+
 Install Python dependencies:
 ```bash
 pip3 install .
