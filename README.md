@@ -54,7 +54,7 @@ pip3 install .
 
 Check and install required tools:
 ```bash
-python3 coach.py
+python3 coach
 ```
 Coach will check for missing dependencies and provide installation commands. Set `auto_install` to `true` in `config.json` for automatic setup (where supported).
 
