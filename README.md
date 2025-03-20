@@ -185,7 +185,7 @@ This project is licensed under the **MIT License** - see the `LICENSE` file for 
 ---
 
 ## 🙌 Acknowledgments
-- Built with ❤️ by **[RUKUNDO BAHATI Samuel/Coach]**
+- Built with by **[Team Coach]**
 - Powered by open-source tools like Semgrep, Pylint, and Rich.
 - Special thanks to the **Terminal GPT** project for AI suggestion capabilities.
 
