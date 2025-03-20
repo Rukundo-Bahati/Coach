@@ -62,19 +62,22 @@ Coach will check for missing dependencies and provide installation commands. Set
 
 ## 📌 Usage
 
-### **Basic Command**
+### **Basic Command (Example)** 
 Analyze a repository by providing its URL and branch:
 ```bash
-coach.py https://github.com/username/repo.git main
+coach https://github.com/username/repo.git main
 ```
+//Replace the github repo with the one you want to analyze
 
 ### **Example Output**
 ```
-   _____       _            
-  /     \     (_)           
- /_______|     _   ___   ___
- |  ***  |    | | /   \ /   \
- |_______|    |_| \___/ \___/
+  ____                 _     
+ / ___|___   __ _  ___| |__  
+| |   / _ \ / _` |/ __| '_ \ 
+| |__| (_) | (_| | (__| | | |
+ \____\___/ \__,_|\___|_| |_|
+                             
+
 Version 1.0.0
 A comprehensive code security & quality analysis tool
 
