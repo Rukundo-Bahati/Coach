@@ -37,7 +37,7 @@ Coach is an advanced, multi-language static analysis tool designed to identify s
 Clone the repository:
 ```bash
 git clone https://github.com/Rukundo-Bahati/Coach.git
-cd coach
+cd Coach
 ```
 
 Install Python dependencies:
