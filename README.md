@@ -68,7 +68,7 @@ Analyze a repository by providing its URL and branch:
 coach https://github.com/username/repo.git main
 ```
 //Replace the github repo with the one you want to analyze
-### Coach considers the main branch as the default for all repositories. You have to specify the brach of the repository unless it is main.
+### main branch is considered as default for all repositories. If it's not, you have to specify it.
  
 ### **Example Output**
 ```
