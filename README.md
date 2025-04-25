@@ -6,6 +6,8 @@
 
 **Version:** 1.0.0  
 **Built with:** Python 3, Semgrep, Rich, and more
+![coach](https://github.com/user-attachments/assets/2406a377-2a81-470f-b693-5c229266352e)
+
 
 Coach is an advanced, multi-language static analysis tool designed to identify security vulnerabilities, code quality issues, and dependency risks in your repositories. Whether you're a developer, security professional, or DevOps engineer, Coach empowers you to maintain secure and high-quality codebases with ease.
 
